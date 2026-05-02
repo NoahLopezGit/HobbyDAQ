@@ -1,17 +1,15 @@
 const float ADC_COUNTS = 1023.0;
 const float VREF = 5.0;   // Arduino reference voltage (adjust if using 3.3V or INTERNAL)
 
-// calibrations
-float xOffset = 0.03;
-float xScale  = 1.02;
+// calibrations - follow 6-point static calibration using gravity
+float xOffset = -0.03;
+float xScale  = 1.087;
 
-float yOffset = -0.01;
-float yScale  = 0.98;
+float yOffset = -0.06;
+float yScale  = 1.087;
 
-float zOffset = 0.05;
-float zScale  = 1.01;
-
-
+float zOffset = -0.085;
+float zScale  = 1.058;
 
 void setup() {
   Serial.begin(9600);
@@ -44,11 +42,11 @@ void loop() {
   Serial.print(",");
   Serial.print(zout);
   Serial.print(",");
-  Serial.print(xout);
+  Serial.print(xCal);
   Serial.print(",");
-  Serial.print(yout);
+  Serial.print(yCal);
   Serial.print(",");
-  Serial.println(zout);
+  Serial.println(zCal);
 
-  delay(10);
+  delay(50);
 }
