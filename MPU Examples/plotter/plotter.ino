@@ -34,6 +34,8 @@ void loop() {
   mpu.getEvent(&a, &g, &temp);
 
   /* Print out the values */
+  Serial.write()
+
   Serial.print("AccelX:");
   Serial.print(a.acceleration.x);
   Serial.print(",");
